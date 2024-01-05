@@ -1,2 +1,3 @@
 import { MyElement } from "./components/ml/my-element"
-export default { MyElement }
+import { YourElement } from "./components/yl/your-element"
+export default { MyElement, YourElement }
