@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import {LitElement, html, css} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import { LitElement, html, css } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 
 /**
  * An example element.
@@ -14,12 +14,16 @@ import {customElement, property} from 'lit/decorators.js';
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('my-element')
-export class MyElement extends LitElement {
+
+const componentName = "wd-base";
+
+
+@customElement(componentName)
+export class Head extends LitElement {
   static override styles = css`
-    :host {
+    :host{
       display: block;
-      border: solid 1px gray;
+      border: solid 1px red;
       padding: 16px;
       max-width: 800px;
     }
@@ -34,7 +38,7 @@ export class MyElement extends LitElement {
   /**
    * The number of times the button has been clicked.
    */
-  @property({type: Number})
+  @property({ type: Number })
   count = 0;
 
   override render() {
@@ -61,8 +65,9 @@ export class MyElement extends LitElement {
   }
 }
 
+
 declare global {
   interface HTMLElementTagNameMap {
-    'my-element': MyElement;
+    [componentName]: Head;
   }
 }

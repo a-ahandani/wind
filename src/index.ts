@@ -1,3 +1,4 @@
-import { MyElement } from "./components/ml/my-element"
-import { YourElement } from "./components/yl/your-element"
-export default { MyElement, YourElement }
+import { Header } from "./components/header"
+import { Footer } from "./components/footer"
+import { Content } from "./components/content"
+export default { Header, Footer, Content }
