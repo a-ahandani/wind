@@ -30,7 +30,8 @@
     "test:watch": "wtr --watch",
     "test:prod": "MODE=prod wtr",
     "test:prod:watch": "MODE=prod wtr --watch",
-    "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js"
+    "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js",
+    "dev": "concurrently \"npm run serve\" \"tailwindcss -i ./src/tailwind/tailwindlib.css -o ./src/tailwind/tailwind.css --watch\" \"twlit --output ./src/tailwind/index.ts --input ./src/tailwind/tailwind.css\" \"npm run build:watch\" "
   },
   "keywords": [
     "web-components",
@@ -58,6 +59,7 @@
     "@web/test-runner": "^0.18.0",
     "@web/test-runner-playwright": "^0.11.0",
     "@webcomponents/webcomponentsjs": "^2.8.0",
+    "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
     "lit-analyzer": "^2.0.2",
     "prettier": "^3.1.1",
@@ -65,6 +67,8 @@
     "rollup": "^2.73.0",
     "rollup-plugin-summary": "^1.4.3",
     "rollup-plugin-terser": "^7.0.2",
+    "tailwindcss": "^3.4.1",
+    "twlit": "^0.0.1-alpha.37",
     "typescript": "~5.3.3"
   },
   "customElements": "custom-elements.json"
