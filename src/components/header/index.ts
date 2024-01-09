@@ -1,23 +1,17 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { withTailwindStyles } from '../../decorators';
 
 const componentName = "wd-head";
 
 @customElement(componentName)
+@withTailwindStyles()
 export class Header extends LitElement {
-  static override styles = css`
-    :host{
-      display: flex;
-      border: solid 1px red;
-      width: 100%;
-      margin: 0;
-    }
-  `;
-
   override render() {
     return html`
-      <h1 class=" bg-red-500">Header</h1>
+    <div class="flex bg-slate-400">
       <slot></slot>
+    </div>
     `;
   }
 }

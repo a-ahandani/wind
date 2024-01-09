@@ -1,23 +1,18 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { TWStyles } from "../../tailwind";
+import { withTailwindStyles } from '../../decorators';
+
+
+
 
 const componentName = "wd-menu";
 
 @customElement(componentName)
+@withTailwindStyles()
 export class Menu extends LitElement {
-  static override styles = [css`
-    :host{
-      display: flex;
-      border: solid 1px red;
-      width: 100%;
-      margin: 0;
-    }
-  `, TWStyles];
-
   override render() {
     return html`
-          <h1 class="text-4xl font-bold underline bg-slate-100">
+          <h1 class="text-4xl font-bold underline bg-red-300">
     Hello world!
   </h1>
       <button class="bg-red">Menu</button>

@@ -1,30 +1,25 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { withTailwindStyles } from '../../decorators';
 
 const componentName = "wd-footer";
 
 @customElement(componentName)
+@withTailwindStyles()
 export class Footer extends LitElement {
-    static override styles = css`
-    :host{
-      display: flex;
-      border: solid 1px red;
-      width: 100%;
-      margin: 0;
-    }
-  `;
-
-    override render() {
-        return html`
-      <h1>Footer</h1>
+  override render() {
+    return html`
+          <p class="text-4xl text-red-800">
+    Hello world!
+  </p>
       <slot></slot>
     `;
-    }
+  }
 }
 
 
 declare global {
-    interface HTMLElementTagNameMap {
-        [componentName]: Footer;
-    }
+  interface HTMLElementTagNameMap {
+    [componentName]: Footer;
+  }
 }

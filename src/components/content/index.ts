@@ -1,22 +1,16 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { withTailwindStyles } from '../../decorators';
 
 const componentName = "wd-content";
 
 @customElement(componentName)
+@withTailwindStyles()
 export class Content extends LitElement {
-  static override styles = css`
-    :host{
-      display: flex;
-      border: solid 1px red;
-      width: 100%;
-      margin: 0;
-    }
-  `;
 
   override render() {
     return html`
-      <h1>Content</h1>
+      <h1 class=" bg-red-800">Content</h1>
       <slot></slot>
     `;
   }
